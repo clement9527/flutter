@@ -161,7 +161,7 @@ class PathUrlStrategy extends HashUrlStrategy {
 
   @override
   String getPath() {
-    final String path = _platformLocation.pathname + _platformLocation.search;
+    final String path = _platformLocation.pathname + _platformLocation.search + _platformLocation.hash;
     if (_basePath.isNotEmpty && path.startsWith(_basePath)) {
       return ensureLeadingSlash(path.substring(_basePath.length));
     }
